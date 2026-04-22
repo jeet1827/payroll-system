@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+uploads/*.xlsx
+uploads/*.xls
+payslips/
+.DS_Store
+*.log
+instance/
