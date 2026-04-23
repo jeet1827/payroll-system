@@ -316,7 +316,10 @@ def upload():
     if f.filename == '':
         return jsonify({'error': 'No file selected'}), 400
     if f and f.filename.endswith(('.xlsx', '.xls')):
-        path = os.path.join(app.config['UPLOAD_FOLDER'], 'employee_payroll_data.xlsx')
+        import werkzeug.utils
+        filename = werkzeug.utils.secure_filename(f.filename)
+        os.makedirs('uploads', exist_ok=True)
+        path = os.path.join('uploads', filename)
         f.save(path)
         global UPLOADED_FILE
         UPLOADED_FILE = path
