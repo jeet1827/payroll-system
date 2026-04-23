@@ -1,6 +1,6 @@
-echo flask==3.0.3 > requirements.txt
-echo pandas==2.2.3 >> requirements.txt
-echo openpyxl==3.1.2 >> requirements.txt
-echo reportlab==4.2.2 >> requirements.txt
-echo xlrd==2.0.1 >> requirements.txt
-echo gunicorn==22.0.0 >> requirements.txt
+flask
+pandas
+openpyxl
+reportlab
+xlrd
+gunicorn
