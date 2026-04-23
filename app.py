@@ -319,8 +319,8 @@ def upload():
     if f and f.filename.endswith(('.xlsx', '.xls')):
         path = os.path.join(app.config['UPLOAD_FOLDER'], 'employee_payroll_data.xlsx')
         f.save(path)
-        global UPLOADED_FILE
-                UPLOADED_FILE = path
+       global UPLOADED_FILE
+UPLOADED_FILE = path
         return jsonify({'success': True, 'message': 'File uploaded successfully'})
     return jsonify({'error': 'Invalid file type. Please upload .xlsx or .xls'}), 400
 
