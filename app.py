@@ -13,7 +13,6 @@ import math
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
-os.makedirs('uploads', exist_ok=True)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 EXCEL_FILE = 'employee_payroll_data.xlsx'
@@ -319,8 +318,8 @@ def upload():
     if f and f.filename.endswith(('.xlsx', '.xls')):
         path = os.path.join(app.config['UPLOAD_FOLDER'], 'employee_payroll_data.xlsx')
         f.save(path)
-       global UPLOADED_FILE
-UPLOADED_FILE = path
+        global UPLOADED_FILE
+        UPLOADED_FILE = path
         return jsonify({'success': True, 'message': 'File uploaded successfully'})
     return jsonify({'error': 'Invalid file type. Please upload .xlsx or .xls'}), 400
 
